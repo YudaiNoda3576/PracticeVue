@@ -10,6 +10,12 @@ var app = new Vue({
         prefecture: "滋賀",
         age: 28,
       },
-      colors:["赤","緑","青"]
+      colors:["赤","緑","青"],
+      now: ""
+    },
+    methods: {
+      onclick: function(){
+       this.now = new Date().toLocaleDateString();
+      }
     }
   })

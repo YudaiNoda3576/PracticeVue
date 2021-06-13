@@ -11,6 +11,12 @@
         <p>
             <input type="text" v-bind:value="message"/>
         </p>
+        <button v-on:click="onclick">
+            Click Here
+        </button>
+        <p>
+            {{ now }}
+        </p>
         <p v-show="toggle">
             {{ message }}    
         </p>
