@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-      toggle: true,
+      toggle: false,
       message: 'Hello Vue!',
       count: 0,
       user:{
