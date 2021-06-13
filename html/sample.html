@@ -8,8 +8,12 @@
 </head>
 <body>
     <div id="app">
+        <hello-world-component></hello-world-component>
         <p>
-            <input type="text" v-bind:value="message"/>
+            <!-- <input type="text" v-bind:value="message"/> -->
+            <input type="text" v-model="message"/>
+            <input type="text" v-model="message"/>
+            <p>{{ $data.message }}</p>
         </p>
         <button v-on:click="onclick">
             Click Here

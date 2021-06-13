@@ -1,3 +1,6 @@
+Vue.component('hello-world-component', {
+    template:'<p>Hello Worldのコンポーネントです</p>'
+});
 var app = new Vue({
     el: '#app',
     data: {
@@ -18,4 +21,4 @@ var app = new Vue({
        this.now = new Date().toLocaleDateString();
       }
     }
-  })
+})
