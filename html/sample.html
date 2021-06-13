@@ -9,10 +9,19 @@
 <body>
     <div id="app">
         <p>
-            <input type="text" v-model="message" />
+            <input type="text" v-bind:value="message"/>
+        </p>
+        <p v-if="toggle">
+            {{ message }}    
         </p>
         <p>
-            {{ message }}
+            {{ count }}
+        </p>
+        <p>
+            {{ user.lastName + user.firstName}}  :  {{ user.age }} 才
+        </p>
+        <p>
+            {{ colors[0] }}
         </p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
