@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>現在のBitCoin価格</h2>
+        <section v-if="hasError">
+            取得値が不正です
+        </section>
+        <section v-else>
+            <div v-if="loading">
+                LoadingNow...
+            </div>
+            <div v-else>
+                <ul v-cloak>
+                    <li v-for="(rate, currency) in bpi">
+                        {{currency}} : {{rate.rate_float | currencyDecimal}}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../js/bitcoin.js"></script>
+</body>
+</html>
