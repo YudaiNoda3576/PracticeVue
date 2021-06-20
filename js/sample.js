@@ -19,6 +19,9 @@ var app = new Vue({
     methods: {
       onclick: function(){
        this.now = new Date().toLocaleDateString();
+      },
+      clickHandler: function(e){
+        this.message = this.message.split('').reverse().join('')
       }
     }
 })

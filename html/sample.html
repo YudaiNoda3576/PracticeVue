@@ -24,6 +24,10 @@
         <p v-show="toggle">
             {{ message }}    
         </p>
+        <p v-once> 
+            {{ message }}    
+        </p>
+        <button v-on:click="clickHandler">Click!</button>
         <p>
             {{ count }}
         </p>
