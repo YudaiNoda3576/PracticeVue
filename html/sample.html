@@ -8,10 +8,26 @@
 </head>
 <body>
     <div id="app">
+        <p>
+            <input type="text" v-model="km"/>km
+        </p>
+        <p>
+            <input type="text" v-model="m"/>m
+        </p>
+        <p>
+            <input type="text" v-model="mm"/>mm
+        </p>
+        <pre>{{ message }}</pre>
+        <p>
+            base price <input type="text" v-model="basePrice"/>
+        </p>
+        <p>
+            tax include price <input type="text" v-model="taxIncludedPrice"/>
+        </p>
+        <p>{{ reversedText }}</p>
         <hello-world-component></hello-world-component>
         <p>
             <!-- <input type="text" v-bind:value="message"/> -->
-            <input type="text" v-model="message"/>
             <input type="text" v-model="message"/>
             <p>{{ $data.message }}</p>
         </p>
