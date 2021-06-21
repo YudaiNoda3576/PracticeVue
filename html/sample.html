@@ -27,6 +27,25 @@
         <p v-once> 
             {{ message }}    
         </p>
+        <p v-pre> 
+            {{ message }}    
+        </p>
+        <p> 
+            {{ number * 100 }}    
+        </p>
+        <p> 
+            {{ isOk ? "OKです" : "OKじゃねえよ！" }}    
+        </p>
+        <p> 
+            USD : ${{ jpyPrice | jpyToUsd | numberFormat }}    
+        </p>
+        <p>
+            {{ longText | readMore(20, "...")}}
+        </p>
+        <!-- <a v-bind:href="url" target="_blank">read more</a> -->
+        <a :href="url" target="_blank">read more</a>
+        <p v-html="html"></p> 
+        <p v-text="message "></p>
         <button v-on:click="clickHandler">Click!</button>
         <p>
             {{ count }}
