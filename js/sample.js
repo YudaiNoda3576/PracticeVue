@@ -27,7 +27,10 @@ var app = new Vue({
         prefecture: "滋賀",
         age: 28,
       },
-      colors:["赤","緑","青"],
+      colors:[
+        {name:"赤"},
+        {name:"緑"},
+        {name:"青"}],
       now: "",
       number: 100,
       isOk: false,
@@ -37,7 +40,10 @@ var app = new Vue({
       basePrice: 100,
       km: 0,
       m: 0,
-      mm: 0
+      mm: 0,
+      lastName:'',
+      firstName:''
+      // fullName:''
     },
     methods: {
       onclick: function(){
@@ -59,6 +65,10 @@ var app = new Vue({
           this.basePrice = Math.ceil(taxIncludedPrice / 1.08)
         }
       },
+      // watch式を書き換え
+      fullName: function(){
+        return `${this.lastName} ${this.firstName}`
+      }
     },
     watch: {
       message: function(newVal, oldVal){
@@ -78,6 +88,26 @@ var app = new Vue({
         this.km = val / 10000;
         this.m = val / 100;
         this.mm = val;
+      },
+      colors:{
+        // 深い階層のwatchにはhandlerとdeepが必須
+        handler: function(newVal, oldVal){
+          console.log("Changed")
+          // deepオプションのnewValとoldValが同じ値になることの検証
+          console.log('new: %s, old: $s',
+          JSON.stringify(newVal, null, '\t'),
+          JSON.stringify(oldVal, null, '\t'))
+        },
+        // デフォルトでfalse
+        deep: true, 
+        immediate: true
       }
+      // 算出プロパティに書き換える
+      // lastName: function(val){
+      //   this.fullName = `${val}  ${this.firstName}`
+      // },
+      // firstName: function(val){
+      //   this.fullName = `${this.lastName}  ${val}`
+      // }
     }
 })

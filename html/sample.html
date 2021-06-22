@@ -8,6 +8,18 @@
 </head>
 <body>
     <div id="app">
+        <ul>
+            <li v-for="color in colors">{{ color.name }}</li>
+        </ul>
+        <p>
+            lastName:<input type="text" v-model="lastName"/>
+        </p>
+        <p>
+            firstName:<input type="text" v-model="firstName"/>
+        </p>
+        <p>
+            fullName: {{ fullName }}
+        </p>
         <p>
             <input type="text" v-model="km"/>km
         </p>
