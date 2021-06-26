@@ -17,8 +17,11 @@ Vue.component('hello-world-component', {
 let app = new Vue({
     el: '#app',
     data: {
+      dateTime:'',
+      counter: 0,
       toggle: true,
       message: 'Hello Vue!',
+      message2: '',
       html: '<span style="color: red;">Hello Vue!</span>',
       count: 0,
       user:{
@@ -65,6 +68,22 @@ let app = new Vue({
       },
       clickHandler: function(e){
         this.message = this.message.split('').reverse().join('')
+      },
+      incrementCount: function($event, message){
+        this.counter++
+        this.message2 = message
+        console.log($event)
+      },
+      showDateTime: function(){
+        let date = new Date().toLocaleDateString()
+        let time = new Date().toLocaleTimeString()
+        this.dateTime = date + time
+      },
+      clearText: function(){
+        this.message2 = ''
+      },
+      showAlertToClearText: function(){
+        alert('何みてんねん。しばくぞ')
       }
     },
     computed: {

@@ -8,6 +8,18 @@
 </head>
 <body>
     <div id="app">
+        <!-- システム修飾キー v-onの省略記法-->
+        <div @click.shift="showAlertToClearText">While pushing shift Click Me! </div>
+        <p>{{ message2 }}</p>
+        <!-- 修飾子は複数指定してOR条件で繋げることができる -->
+        <input type="text" v-on:keyup.esc.space.up="clearText" v-model="message2">
+        <p>{{ dateTime }}</p>
+        <button v-on:click.once=" showDateTime ">showDateTime(once)</button>
+        <p>
+            {{ counter }}
+        </p>
+        <p>{{ message2 }}</p>
+        <button v-on:click=" incrementCount($event, 'message!') ">click!</button>
         <!-- v-showはDisplayプロパティによる切り替え、高い初期描画コスト、v-elseなど使用不可 -->
         <p v-show="toggle">
             v-showを使った表示非表示
