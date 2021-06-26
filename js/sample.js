@@ -34,6 +34,7 @@ let countComponent = {
 let app = new Vue({
     el: '#app',
     data: {
+      show: false,
       age: 0,
       selected:'',
       dateTime:'',

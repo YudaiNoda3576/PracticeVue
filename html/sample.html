@@ -8,6 +8,10 @@
 </head>
 <body>
     <div id="app">
+        <button @click="show=!show">show text</button>
+        <transition>
+            <p v-show="show">見てんじゃねぇよ。</p>
+        </transition>
         <count-component></count-component>
         <hello-world-component></hello-world-component>
         <!-- 前後の空白を削除する -->
