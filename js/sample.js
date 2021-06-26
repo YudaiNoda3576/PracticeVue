@@ -14,7 +14,7 @@ Vue.component('hello-world-component', {
     template:'<p>Hello Worldのコンポーネントです</p>'
 });
 
-var app = new Vue({
+let app = new Vue({
     el: '#app',
     data: {
       toggle: false,
@@ -42,8 +42,22 @@ var app = new Vue({
       m: 0,
       mm: 0,
       lastName:'',
-      firstName:''
+      firstName:'',
       // fullName:''
+      isLarge: true,
+      hasError: false,
+      largeClass: 'large',
+      dabgerClass: 'text-danger',
+      classObject:{
+        large: false,
+        'text-danger': true
+      },
+      largeClass:{
+        large: true,
+        'bg-gray': true
+      },
+      color: 'green',
+      fontSize: 36
     },
     methods: {
       onclick: function(){

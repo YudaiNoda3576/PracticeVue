@@ -3,11 +3,11 @@ let app = new Vue({
     data: {
         items: null,
         keyWord: '',
-        message: ''
+        message: '',
     },
     watch: {
         keyWord: function(newVal, oldVal){
-            console.log(newVal)
+            // console.log(newVal)
             this.message = "入力中｡｡｡"
             this.debouncedGetAnswer()
         }

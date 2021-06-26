@@ -8,6 +8,23 @@
 </head>
 <body>
     <div id="app">
+        <p v-bind:style="{ color: color, fontSize: fontSize + 'px' }">
+            インラインスタイルのバインディング
+         </p>
+        <p v-bind:class="isLarge? largeClass: classObject">
+            真偽値に応じてクラスを切り替える
+         </p>
+        <p v-bind:class="classObject">
+            オブジェクトにクラスを格納して渡す
+         </p>
+        <p v-bind:class="[largeClass, 'text-danger']">
+           配列形式でクラスを渡す
+        </p>
+        <!-- v-bind:classはプレーンなclassとも共存できる -->
+        <p>
+            Hello <span v-bind:class="{large: isLarge, 'text-danger': hasError}"
+            class="bg-gray text-blue ">World</span>
+        </p>
         <ul>
             <li v-for="color in colors">{{ color.name }}</li>
         </ul>
@@ -93,5 +110,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script type="text/javascript" src="../js/sample.js"></script>
+    <link rel="stylesheet" href="../css/sample.css">
 </body>
 </html>
