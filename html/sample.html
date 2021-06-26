@@ -8,7 +8,53 @@
 </head>
 <body>
     <div id="app">
-        <!-- システム修飾キー v-onの省略記法-->
+        <!-- 前後の空白を削除する -->
+        <div>
+            <p>{{ age + 10 }}</p>
+            <input type="text" v-model.number="age">
+        </div>
+        <!-- 前後の空白を削除する -->
+        <div>
+            <p>{{ message }}</p>
+            <input type="text" v-model.trim="message">
+        </div>
+        <!-- データバインドのタイミングを遅らせる -->
+        <div>
+            <p>{{ message }}</p>
+            <input type="text" v-model.lazy="message">
+        </div>
+        {{ selected }}
+        <select v-model="selected">
+            <option value="" disabled>-</option>
+            <option value="red">赤</option>
+            <option value="yellow">黄</option>
+            <option value="blue">青</option>
+        </select>
+        <!-- 複数チェックボックスの場合 -->
+        <div>
+            <p>{{ color }}</p>
+            <label for="red">赤</label>   
+            <input type="radio" id="red" v-model="color" value="red">
+            <label for="red">黄</label>   
+            <input type="radio" id="yellow" v-model="color" value="yellow">
+            <label for="red">青</label>   
+            <input type="radio" id="blue" v-model="color" value="blue">
+        </div>
+        <div>
+            <p>{{ colors }}</p>
+            <label for="red">赤</label>   
+            <input type="checkbox" id="red" v-model="colors" value="red">
+            <label for="red">黄</label>   
+            <input type="checkbox" id="yellow" v-model="colors" value="yellow">
+            <label for="red">青</label>   
+            <input type="checkbox" id="blue" v-model="colors" value="blue">
+        </div>
+
+        <label for="checkbox">{{ checked }}</label>   
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <!-- 複数行でマスタッシュ構文は使えない -->
+        <textarea style="display: block;" v-model="message"></textarea>
+        <!-- システム修飾キー/v-onの省略記法-->
         <div @click.shift="showAlertToClearText">While pushing shift Click Me! </div>
         <p>{{ message2 }}</p>
         <!-- 修飾子は複数指定してOR条件で繋げることができる -->

@@ -17,6 +17,8 @@ Vue.component('hello-world-component', {
 let app = new Vue({
     el: '#app',
     data: {
+      age: 0,
+      selected:'',
       dateTime:'',
       counter: 0,
       toggle: true,
@@ -30,10 +32,7 @@ let app = new Vue({
         prefecture: "滋賀",
         age: 28,
       },
-      colors:[
-        {name:"赤"},
-        {name:"緑"},
-        {name:"青"}],
+      colors:[],
       now: "",
       number: 100,
       isOk: false,
@@ -59,8 +58,9 @@ let app = new Vue({
         large: true,
         'bg-gray': true
       },
-      color: 'green',
-      fontSize: 36
+      color: '',
+      fontSize: 36,
+      checked: false
     },
     methods: {
       onclick: function(){
