@@ -17,7 +17,7 @@ Vue.component('hello-world-component', {
 let app = new Vue({
     el: '#app',
     data: {
-      toggle: false,
+      toggle: true,
       message: 'Hello Vue!',
       html: '<span style="color: red;">Hello Vue!</span>',
       count: 0,
