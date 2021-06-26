@@ -9,10 +9,27 @@ Vue.filter('jpyToUsd', function(jpyPrice){
 Vue.filter('readMore', function(longText, length, suffix){
   return longText.substring(0, length) + suffix
 })
+// ローカル登録に変更↓
+// Vue.component('hello-world-component', {
+//     template:'<p>Hello Worldのコンポーネントです</p>'
+// });
+let helloComponent = {
+  template: '<p>Hello Worldのコンポーネントです</p>'
+}
 
-Vue.component('hello-world-component', {
-    template:'<p>Hello Worldのコンポーネントです</p>'
-});
+let countComponent = {
+  // conmponetのdataオプションはfunctionであることに注意
+  data: function(){
+    return {
+      count: 0
+    }
+  },
+  // templateのルート要素は単一であること
+  // これはできない
+  //template:'<span>count:</span><button @click="count++">{{ count }}</button>'
+  // 一つの要素で囲う必要がある
+  template:'<div><span>count:</span><button @click="count++">{{ count }}</button></div>'
+}
 
 let app = new Vue({
     el: '#app',
@@ -142,5 +159,9 @@ let app = new Vue({
       // firstName: function(val){
       //   this.fullName = `${this.lastName}  ${val}`
       // }
+    },
+    components: {
+      'hello-world-component' : helloComponent,
+      'count-component' : countComponent
     }
 })

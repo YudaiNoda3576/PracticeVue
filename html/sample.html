@@ -8,6 +8,8 @@
 </head>
 <body>
     <div id="app">
+        <count-component></count-component>
+        <hello-world-component></hello-world-component>
         <!-- 前後の空白を削除する -->
         <div>
             <p>{{ age + 10 }}</p>
@@ -130,7 +132,6 @@
             tax include price <input type="text" v-model="taxIncludedPrice"/>
         </p>
         <p>{{ reversedText }}</p>
-        <hello-world-component></hello-world-component>
         <p>
             <!-- <input type="text" v-bind:value="message"/> -->
             <input type="text" v-model="message"/>
